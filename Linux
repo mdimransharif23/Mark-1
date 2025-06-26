@@ -1,0 +1,2618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Linux Guide – Table of Contents</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fdfdfd;
+      color: #2c3e50;
+      padding: 20px;
+    }
+
+    .toc-container {
+      max-width: 700px;
+      margin: auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 6px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .toc-heading {
+      font-size: 24px;
+      font-weight: bold;
+      color: #1a73e8;
+      margin-bottom: 20px;
+    }
+
+    .toc-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .toc-list li {
+      padding: 8px 0;
+      border-bottom: 1px dotted #ccc;
+    }
+
+    .toc-list li a {
+      text-decoration: none;
+      color: #2c3e50;
+      transition: color 0.2s ease;
+    }
+
+    .toc-list li a:hover {
+      color: #1a73e8;
+    }
+    
+ 
+    /*SSH Setup via MobaXterm */
+ 
+
+.comparison-table thead {
+  background-color: #f1f5fb;
+  color: #2c3e50;
+}
+
+.custom-bullets {
+  list-style: disc inside;
+  margin: 0;
+  padding-left: 20px;
+}
+
+    
+    /* Linux vs. Windows – Detailed Comparison */
+    .comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 16px;
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 12px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+.comparison-table thead th {
+  background-color: #f1f5fb;
+  color: #1a202c;
+}
+
+    /* Partition and Storage Notes */
+    
+    .section-heading {
+  margin-top: 50px;
+  font-size: 22px;
+  color: #1a73e8;
+  border-bottom: 1px solid #ddd;
+}
+
+.subheading {
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.custom-bullets {
+  list-style: disc inside;
+  padding-left: 20px;
+}
+
+.custom-notes {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: #fcfcfc;
+  border: 1px dashed #aaa;
+}
+
+.custom-notes td {
+  padding: 15px;
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="toc-container">
+    <div class="toc-heading">📚 Contents</div>
+    <ul class="toc-list">
+      <li><a href="#_Toc185703272">1. Getting Started with Red Hat Enterprise Linux</a></li>
+      <li><a href="#_Toc185703273">2. Accessing the Command Line</a></li>
+      <li><a href="#_Toc185703274">3. Managing Files From the Command Line</a></li>
+      <li><a href="#_Toc185703275">4. Getting Help in Red Hat Enterprise Linux</a></li>
+      <li><a href="#_Toc185703276">5. Creating, Viewing, and Editing Text Files</a></li>
+      <li><a href="#_Toc185703277">6. Managing Local Users and Groups</a></li>
+      <li><a href="#_Toc185703278">7. Controlling Access to Files</a></li>
+      <li><a href="#_Toc185703279">8. Monitoring and Managing Linux Processes</a></li>
+      <li><a href="#_Toc185703280">SA1 Chapter 12 – Managing Networking</a></li>
+      <li><a href="#_Toc185703281">SA1 Chapter 10 – Configuring & Securing SSH</a></li>
+      <li><a href="#_Toc185703282">SA1 Chapter 13 – Archiving & Transferring Files</a></li>
+      <li><a href="#_Toc185703283">Chapter 14</a></li>
+      <li><a href="#_Toc185703284">Chapter 15 – Accessing Linux File Systems</a></li>
+      <li><a href="#_Toc185703285">Chapter 9</a></li>
+      <li><a href="#_Toc185703286">Chapter 11 – Analyzing and Storing Logs</a></li>
+      <li><a href="#_Toc185703287">SA2 Chapter 1</a></li>
+      <li><a href="#_Toc185703288">SA2 Chapter 2</a></li>
+      <li><a href="#_Toc185703289">SA2 Chapter 6 – Managing Basic Storage</a></li>
+      <li><a href="#_Toc185703290">SA2 Chapter 8 – Virtual Data Optimizer (VDO)</a></li>
+      <li><a href="#_Toc185703291">Chapter 9 – Accessing Network-Attached Storage (NFS)</a></li>
+      <li><a href="#_Toc185703292">Chapter 10 – Controlling the Boot Process: Root Password Break</a></li>
+    </ul>
+  </div>
+
+</body>
+</html>
+
+
+
+
+
+<body>
+
+  <div class="toc-container">
+    <div class="toc-heading">📚 Contents</div>
+    <ul class="toc-list">
+      <!-- ...previous TOC items... -->
+      <li><a href="#_Toc185703293">Chapter 11</a></li>
+      <li><a href="#_Toc185703294">Chapter 5 – SELinux Security</a></li>
+      <li><a href="#_Toc185703295">Note</a></li>
+    </ul>
+
+    <h2 id="_Toc185703272" class="section-heading">1. Getting Started with Red Hat Enterprise Linux</h2>
+
+    <p class="subheading">Class:</p>
+
+    <p class="subheading">Linux Installation Partition Sizes:</p>
+    <ul class="custom-bullets">
+      <li><code>/</code> – 30 GB</li>
+      <li><code>/home</code> – 5 GB</li>
+      <li><code>/boot</code> – 1 GB</li>
+      <li><code>Swap</code> – Double your RAM (e.g., 4 GB)</li>
+    </ul>
+
+    <p class="subheading">To Check Linux ISO Media Before Installation:</p>
+    <ul class="custom-bullets">
+      <li>Select “Test this Media & Install” from the boot menu.</li>
+    </ul>
+
+    <p class="subheading">To Connect Remotely from Physical Computer:</p>
+    <ul class="custom-bullets">
+      <li>Check the IP address of VMware network adapter <code>vmnet1</code></li>
+      <li>VMware → Custom → VMnet1 (Host-only)</li>
+    </ul>
+
+    <div class="image-container">
+      <img src="Linux_files/image001.jpg" alt="VMware Network Adapter VMnet1 screenshot" />
+      <p><em>Figure: VMware Network Adapter – VMnet1 Configuration</em></p>
+    </div>
+  </div>
+
+</body>
+
+
+<h2 class="section-heading">🛠️ Configuring Remote SSH Access via MobaXterm</h2>
+
+<p class="subheading">VMware Network Adapter Setup:</p>
+<div class="image-container">
+  <img src="Linux_files/image002.png" alt="VMware > Virtual Machine Settings > Network Adapter > VMnet1 (host-only)">
+  <p><em>VMware > VM Settings > Network Adapter > Custom > VMnet1</em></p>
+</div>
+
+<p class="subheading">Linux Network Settings (Automatic IP / DHCP):</p>
+<p>On your Linux VM:</p>
+<ul class="custom-bullets">
+  <li>Go to <strong>Settings → Network → Wired → Settings</strong> <img src="Linux_files/image003.png" alt="Settings" width="14"> or press <strong>+</strong></li>
+  <li>Select <strong>IPv4</strong> tab → Choose <strong>Automatic (DHCP)</strong> → Click <strong>Add</strong></li>
+</ul>
+
+<div class="image-container">
+  <img src="Linux_files/image004.jpg" alt="Linux Network IPv4 DHCP" width="300">
+  <p><em>Enabling DHCP for Wired Interface</em></p>
+</div>
+
+<div class="image-container">
+  <img src="Linux_files/image005.jpg" alt="IPv4 Settings UI" width="300">
+</div>
+
+<p class="subheading">Open MobaXterm and Set Up SSH Session:</p>
+<ul class="custom-bullets">
+  <li>Open <strong>MobaXterm</strong></li>
+  <li>Go to <strong>Session → SSH</strong></li>
+  <li>Enter IP (e.g. <code>192.168.1.254</code>)</li>
+  <li>✔️ Specify user: <code>root</code> → <strong>Accept</strong></li>
+</ul>
+
+<div class="image-container">
+  <img src="Linux_files/image006.jpg" alt="MobaXterm SSH Session Setup">
+  <p><em>Session > SSH > IP + Root Username</em></p>
+</div>
+
+<p><strong>→ Enter Root Password to complete the SSH login.</strong></p>
+
+---
+
+<h2 class="section-heading">🔧 Static IP Configuration: MobaXterm + VMware</h2>
+
+<p class="subheading">On the Physical Host:</p>
+<ul class="custom-bullets">
+  <li>Run <code>Win + R → ncpa.cpl</code></li>
+  <li>Select <strong>VMware Network Adapter VMnet1</strong></li>
+  <li>Right-click → <strong>Properties → IPv4 → Properties</strong></li>
+  <li>Use the following IP:
+    <ul>
+      <li><strong>IP Address:</strong> 192.168.1.1</li>
+      <li><strong>Subnet Mask:</strong> 255.255.255.0</li>
+    </ul>
+  </li>
+</ul>
+
+<p class="subheading">On the Virtual Machine:</p>
+<ul class="custom-bullets">
+  <li>Open <strong>Settings → Network → Wired</strong> <img src="Linux_files/image007.png" alt="Settings" width="11"> → <strong>IPv4</strong></li>
+  <li>Choose:
+    <ul>
+      <li><strong>IPv4 Method:</strong> Manual</li>
+      <li><strong>Address:</strong> 192.168.1.254</li>
+      <li><strong>Netmask:</strong> 255.255.255.0</li>
+      <li><strong>Gateway:</strong> 192.168.1.1</li>
+    </ul>
+  </li>
+  <li>VM Settings → Network Adapter → Custom → Choose <strong>VMnet1 (Host-only)</strong></li>
+</ul>
+
+
+
+<h2 class="section-heading">🔐 SSH Setup via MobaXterm</h2>
+
+<ul class="custom-bullets">
+  <li>Open <strong>MobaXterm</strong></li>
+  <li>Navigate to <strong>Session → SSH</strong></li>
+  <li>Set <strong>Remote host:</strong> <code>192.168.1.254</code></li>
+  <li>✔️ Specify username: <code>root</code> → Click <strong>OK</strong></li>
+  <li>Enter the <strong>root password</strong> to complete connection</li>
+</ul>
+
+---
+
+<h2 class="section-heading">⚔️ Difference Between Linux and Windows</h2>
+
+<table class="comparison-table">
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Linux</th>
+      <th>Windows</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Pricing</td>
+      <td>Available free of cost</td>
+      <td>Not available free of cost</td>
+    </tr>
+    <tr>
+      <td>Open Source</td>
+      <td>Yes — it’s an open-source kernel</td>
+      <td>No — source code is proprietary</td>
+    </tr>
+    <tr>
+      <td>File Names</td>
+      <td>Case-sensitive (e.g., <code>File.txt</code> ≠ <code>file.txt</code>)</td>
+      <td>Case-insensitive</td>
+    </tr>
+    <!-- You can continue adding rows here -->
+  </tbody>
+</table>
+
+
+
+
+
+<h2 class="section-heading">⚖️ Linux vs. Windows – Detailed Comparison</h2>
+
+<table class="comparison-table">
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Linux</th>
+      <th>Windows</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Case Sensitivity</td>
+      <td>File system is case-sensitive</td>
+      <td>File system is not case-sensitive</td>
+    </tr>
+    <tr>
+      <td>File System Types</td>
+      <td>Ext4, JFS, ReiserFS, XFS, Btrfs, FAT32, NTFS, etc.</td>
+      <td>FAT32, NTFS, exFAT, FAT</td>
+    </tr>
+    <tr>
+      <td>Booting</td>
+      <td>Supports booting from Primary or Logical partitions</td>
+      <td>Boots only from Primary partitions</td>
+    </tr>
+    <tr>
+      <td>Security</td>
+      <td>Generally considered highly secure</td>
+      <td>Less secure by default, relies more on third-party tools</td>
+    </tr>
+    <tr>
+      <td>OS Family</td>
+      <td>GNU/Linux family</td>
+      <td>MS-DOS/Windows NT family</td>
+    </tr>
+    <tr>
+      <td>Languages Used</td>
+      <td>Primarily C</td>
+      <td>C, C++, Assembly</td>
+    </tr>
+    <tr>
+      <td>Path Separator</td>
+      <td>Forward slash <code>/</code></td>
+      <td>Backslash <code>\</code></td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+<h2 class="section-heading">💻 Installation Process of RHEL 8</h2>
+
+<p class="subheading">Software Requirements:</p>
+<ul class="custom-bullets">
+  <li>OS Media: RHEL DVD or ISO image</li>
+  <li>Network Installation: PXE Boot (via server)</li>
+</ul>
+
+<p class="subheading">Supported Virtualization Platforms:</p>
+<ul class="custom-bullets">
+  <li>VMware</li>
+  <li>VirtualBox</li>
+  <li>Hyper-V (Windows 10)</li>
+  <li>KVM (Linux RHEL 8)</li>
+</ul>
+
+---
+
+<h3 class="subheading">📁 Linux Partitions Overview</h3>
+
+<p><strong>/boot:</strong> Contains the OS kernel and bootstrap files required to boot RHEL 8.</p>
+<p><strong>Note:</strong> The <code>/</code> (root directory) is the top-level of the Linux file system. The <code>/root</code> directory is the home for the root user.</p>
+
+<p><strong>/</strong> (Root): This is the base of the entire filesystem hierarchy. All directories and files branch from here.</p>
+<p><strong>/home:</strong> Stores files created by regular users.</p>
+
+<p><strong>Swap (≈ 2× RAM):</strong> Acts as overflow memory. When RAM is full, inactive pages are moved here. If swap space runs out, the kernel may begin killing processes to free memory.</p>
+
+---
+
+<h3 class="subheading">📦 Partition and Storage Notes</h3>
+
+<table class="custom-notes">
+  <tr>
+    <td>
+      <ul class="custom-bullets">
+        <li><strong>M-Server</strong> cannot operate with only 10 GB in <code>/</code> partition.</li>
+        <li>At login screen: click <strong>Settings</strong> <img src="Linux_files/image008.png" alt="Settings" width="14"> → Select <strong>Standard</strong> session.</li>
+        <li><strong>XFS</strong> is a high-performance journaling file system used by default in many Linux distributions.</li>
+        <li>Why is Linux Secure?
+          <ul>
+            <li><strong>SELinux:</strong> A robust security module that enforces access control policies.</li>
+            <li><strong>RPM:</strong> Package format in RHEL (like <code>.exe</code> in Windows).</li>
+          </ul>
+        </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+
+
+<h2 class="section-heading">💡 What is Bash (GNU Bourne Again Shell)?</h2>
+
+<ul class="custom-bullets">
+  <li>Bash is a <strong>command-line interpreter</strong> (CLI) that processes user-typed commands.</li>
+  <li>It is the <strong>default shell</strong> in most Linux systems: <code>/bin/bash</code>.</li>
+  <li>Bash is an improved version of <code>sh</code> (Bourne Shell).</li>
+  <li>Regular user prompt ends with <code>$</code>; root user prompt ends with <code>#</code>.</li>
+  <li>It allows command execution and supports scripting for task automation.</li>
+  <li>Conceptually similar to Windows’ <code>cmd.exe</code>.</li>
+</ul>
+
+---
+
+<h2 class="section-heading">🔧 Shell Basics</h2>
+
+<ul class="custom-bullets">
+  <li>The shell acts as a bridge between the user and the Kernel, interpreting typed commands.</li>
+  <li>Commands typically have three parts: <strong>command</strong>, <strong>option(s)</strong>, and <strong>argument(s)</strong>.</li>
+  <li>Example: <code>useradd -u 2001 user01</code><br>
+      - <code>useradd</code>: Command<br>
+      - <code>-u</code>: Option<br>
+      - <code>user01</code>: Argument
+  </li>
+</ul>
+
+---
+
+<h2 class="section-heading">🖥️ What is a Terminal?</h2>
+
+<ul class="custom-bullets">
+  <li>The terminal is a <strong>text-based interface</strong> used to input commands in Linux.</li>
+  <li>Also known as the <strong>console</strong> — can be:
+    <ul class="custom-bullets">
+      <li><strong>Physical Terminal:</strong> TTY (Teletypewriter) — usually 1 to 6</li>
+      <li><strong>Virtual Terminal:</strong> PTS (Pseudo Terminal Slave) — virtually unlimited</li>
+    </ul>
+  </li>
+  <li>To open terminal quickly: <code>CTRL + ALT + F1</code> to <code>F6</code></li>
+  <li>To switch terminals from CLI: use <code>chvt 1</code> to <code>chvt 6</code></li>
+</ul>
+
+
+
+
+<h2 class="section-heading">🎛️ Terminal Types & Function Keys</h2>
+
+<ul class="custom-bullets">
+  <li><code>F1</code>: Login Screen</li>
+  <li><code>F2</code>: Graphical Terminal</li>
+  <li><code>F3–F6</code>: CLI Terminals (TTY3–TTY6)</li>
+</ul>
+
+<p class="subheading">Interfaces in Linux:</p>
+<ul class="custom-bullets">
+  <li><strong>GUI</strong>: Graphical User Interface (e.g., GNOME, KDE)</li>
+  <li><strong>CUI / CLI</strong>: Character-based Interface using shell/terminal</li>
+</ul>
+
+<p class="subheading">Terminal Variants:</p>
+<ul class="custom-bullets">
+  <li><strong>TTY1–TTY6</strong>: Physical terminal interfaces (use <code>CTRL + ALT + F1–F6</code>)</li>
+  <li><strong>PTS1, PTS2, …</strong>: Virtual terminals (spawned inside GUI)</li>
+</ul>
+
+<p><code>tty</code> — Use this command to check which terminal you're currently using.</p>
+
+---
+
+<h2 class="section-heading">🔐 Login & Logout (Local & Remote)</h2>
+
+<ul class="custom-bullets">
+  <li><strong>CTRL+D</strong>: End shell session</li>
+  <li><code>logout</code> or <code>exit</code>: Cleanly logout from shell</li>
+  <li><strong>CTRL+L</strong>: Lock screen in many distros</li>
+</ul>
+
+<p class="subheading">Examples:</p>
+<pre><code># su - u1                  ← Switch to local user
+# ssh root@localhost       ← SSH login to remote system
+# logout
+# exit
+# (or use CTRL+D)</code></pre>
+
+---
+
+<h2 class="section-heading">💻 Launch Terminal (GUI & CLI)</h2>
+
+<ul class="custom-bullets">
+  <li>Use <strong>Activities</strong> menu → Search & select <strong>Terminal</strong></li>
+  <li>Press <strong>ALT + F2</strong> → type <code>gnome-terminal</code></li>
+</ul>
+
+---
+
+<h2 class="section-heading">🔒 Lock the Linux System</h2>
+
+<ul class="custom-bullets">
+  <li><strong>Super Key + L</strong>: Locks the system</li>
+  <li><strong>Super Key</strong> = Windows key</li>
+</ul>
+
+
+<h2 class="section-heading">🔌 Power Off and Reboot in Linux</h2>
+
+<p class="subheading">Reboot the System:</p>
+<pre><code># reboot
+# init 6
+# systemctl reboot</code></pre>
+
+<p class="subheading">Shutdown the System:</p>
+<pre><code># init 0
+# poweroff
+# systemctl poweroff</code></pre>
+
+---
+
+<h2 class="section-heading">🧰 Handy Bash Commands & Shortcuts</h2>
+
+<ul class="custom-bullets">
+  <li><code>*</code> — Select all files (wildcard)</li>
+  <li><code>grep</code> — Search text using regex (Global Regular Expression Print)</li>
+  <li><strong>Ctrl + Shift + T</strong> — Open new terminal tab</li>
+  <li><code>[command] + [Tab + Tab]</code> — Show possible command matches</li>
+  <li><strong>Ctrl + -</strong> — Decrease font size</li>
+  <li><strong>Ctrl + Shift + +</strong> — Increase font size</li>
+  <li><strong>Tab</strong> — Auto-complete command or path</li>
+</ul>
+
+---
+
+<h2 class="section-heading" id="_Toc185703273">2. Accessing the Command Line</h2>
+
+<p>The default shell for users in Red Hat Enterprise Linux is <strong>GNU Bourne-Again Shell (bash)</strong>.</p>
+
+<ul class="custom-bullets">
+  <li><strong>Command</strong> — What to run</li>
+  <li><strong>Options</strong> — Modify command behavior</li>
+  <li><strong>Arguments</strong> — Input the command acts on</li>
+</ul>
+
+<p class="subheading">💻 Switch Between TTY Terminals:</p>
+<ul class="custom-bullets">
+  <li><strong>Ctrl + Alt + F1</strong> to <strong>F6</strong></li>
+</ul>
+
+<p class="subheading">🔗 Logging In Over the Network:</p>
+<pre><code>$ ssh remoteuser@remotehost
+remoteuser@remotehost's password: ******</code></pre>
+
+<p class="subheading">🚪 Logging Out:</p>
+<pre><code>$ exit
+# or use Ctrl + D</code></pre>
+
+
+
+
+<h2 class="section-heading">🖥️ Accessing the Command Line Using the Desktop</h2>
+
+<ul class="custom-bullets">
+  <li><strong>Ctrl + Alt + ↑ / ↓</strong>: Switch between workspaces</li>
+  <li><strong>Alt + F2</strong>: Open “Run Command” box → Type <code>gnome-terminal</code></li>
+  <li><strong>Super + L</strong>: Lock the screen</li>
+  <li><strong>Ctrl + Alt + Del</strong>: Initiate shutdown sequence</li>
+  <li><code>$ yelp</code> — Opens the GNOME Help system</li>
+</ul>
+
+---
+
+<h2 class="section-heading">🔃 Common bash shell commands</h2>
+
+<p class="subheading">🔎 Who is using the system?</p>
+<pre><code># w          → Shows who is logged in and what they are doing
+# who        → Lists logged-in users
+# whoami     → Displays your current effective username</code></pre>
+
+<p class="subheading">📡 Use of Pipe <code>|</code> Operator:</p>
+<pre><code># cat /etc/passwd | grep root
+→ Searches for the term “root” in the passwd file</code></pre>
+
+<p class="subheading">🧬 Use of Semicolon <code>;</code> to chain commands:</p>
+<pre><code># mkdir data ; cd data ; touch file01 ; ls
+→ All commands execute sequentially</code></pre>
+
+<p class="subheading">📆 Using the <code>date</code> Command:</p>
+<ul class="custom-bullets">
+  <li><code>date</code> shows the current time</li>
+  <li>Superuser can use <code>date</code> with options to set the system clock</li>
+</ul>
+
+
+
+
+<h2 class="section-heading">📅 Using <code>date</code> with Format Specifiers</h2>
+
+<pre><code># date +%a   → Short weekday name (e.g. Sun)
+# date +%A   → Full weekday name (e.g. Sunday)
+# date +%b   → Short month name (e.g. Jan)
+# date +%B   → Full month name (e.g. January)
+# date +%r   → 12-hour clock time (e.g. 11:11:04 PM)
+# date +%R   → 24-hour time (HH:MM)
+# date +%x   → Locale-specific date format
+# date +%X   → Locale-specific time format</code></pre>
+
+---
+
+<h2 class="section-heading">🔐 The <code>passwd</code> Command</h2>
+<ul class="custom-bullets">
+  <li>Used to assign or change passwords.</li>
+  <li>Root users can change any regular user's password.</li>
+</ul>
+
+<pre><code># useradd user1 ; passwd user1   # Create user and assign password
+# passwd user1                  # Change existing password</code></pre>
+
+---
+
+<h2 class="section-heading">📂 Determining File Types with <code>file</code></h2>
+
+<ul class="custom-bullets">
+  <li>Linux does not require filename extensions to determine file type.</li>
+  <li><code>file</code> inspects file contents to classify types.</li>
+</ul>
+
+<h3 class="subheading">Common Linux File Types:</h3>
+<ul class="custom-bullets">
+  <li><strong>-</strong> Regular file (text, binary, images)</li>
+  <li><strong>d</strong> Directory</li>
+  <li><strong>b</strong> Block device (e.g., hard drives)</li>
+  <li><strong>l</strong> Symbolic link</li>
+  <li><strong>c</strong> Character device (e.g., keyboard)</li>
+  <li><strong>s</strong> Socket (for inter-process communication)</li>
+</ul>
+
+<h3 class="subheading">Examples:</h3>
+<pre><code># file /etc/passwd    # View file type
+# file /dev/sr0       # Check device file type</code></pre>
+
+
+
+
+<h2 class="section-heading">📁 File Types and Usage in Linux</h2>
+
+<h3 class="subheading">🔍 Identify File Types:</h3>
+<pre><code># file /dev/tty1           # Check type of terminal device
+# file Directoryname       # Check if entry is a directory</code></pre>
+
+---
+
+<h3 class="subheading">📄 Regular File (-):</h3>
+<pre><code># touch file01             # Create blank file
+# ll                       # List files and their types
+# file file01              # Check file type
+# echo "Welcome To Jetking" > file01   # Write content
+# file file01              # Verify it's now a text file</code></pre>
+
+---
+
+<h3 class="subheading">📂 Directory File (d):</h3>
+<pre><code># ll                       # Shows directories marked with 'd'</code></pre>
+
+---
+
+<h3 class="subheading">💽 Block File (b):</h3>
+<pre><code># ls -l /dev/sr0           # Example of block storage device</code></pre>
+
+---
+
+<h3 class="subheading">🔗 Link File (l):</h3>
+<pre><code># ls -l /dev/cdrom         # Often a symbolic link
+# ll                       # Shows 'l' prefix for links
+lrwxrwxrwx. 1 root root 7 Aug 12 2018 bin -> usr/bin</code></pre>
+
+---
+
+<h3 class="subheading">🧲 Character File (c):</h3>
+<pre><code># ll                       # Look for lines starting with 'c'
+crw--w----. 1 root tty 4, 0 Dec 12 22:55 tty2</code></pre>
+
+---
+
+<h3 class="subheading">📖 Viewing File Content Using <code>cat</code></h3>
+
+<ul class="custom-bullets">
+  <li><code>cat</code> = Concatenate</li>
+  <li>Used to view contents, create files, and redirect output</li>
+</ul>
+
+<pre><code># cat /etc/passwd          # View contents of passwd
+# >Parwez                 # Create blank file named 'Parwez'</code></pre>
+
+
+
+
+
+<h2 class="section-heading">📄 Creating Files with <code>cat</code></h2>
+
+<pre><code># cat > Parwez       # Create file interactively
+CTRL+D               # Save and exit</code></pre>
+
+---
+
+<h2 class="section-heading">📚 Viewing Files with <code>less</code>, <code>head</code> & <code>tail</code></h2>
+
+<h3 class="subheading">📌 <code>head</code> & <code>tail</code> Basics:</h3>
+<ul class="custom-bullets">
+  <li><code>head</code>: Shows first 10 lines of a file by default</li>
+  <li><code>tail</code>: Shows last 10 lines of a file by default</li>
+  <li>Use <code>-n</code> to specify number of lines</li>
+</ul>
+
+<pre><code># head /etc/passwd                # First 10 lines
+# head -n 2 /etc/passwd          # First 2 lines
+# tail /etc/passwd               # Last 10 lines
+# tail -n 2 /etc/passwd > TwoUser
+# tail -n 5 /etc/passwd /etc/shadow /etc/group > file1.txt</code></pre>
+
+---
+
+<h2 class="section-heading">🔢 Counting Lines, Words, and Characters with <code>wc</code></h2>
+
+<ul class="custom-bullets">
+  <li><code>wc</code> = Word Count: displays line, word, and byte count</li>
+  <li>Use flags:
+    <ul class="custom-bullets">
+      <li><code>-l</code>: lines</li>
+      <li><code>-w</code>: words</li>
+      <li><code>-c</code>: bytes/characters</li>
+    </ul>
+  </li>
+</ul>
+
+<pre><code># wc /etc/passwd           # All counts
+# wc -l /etc/passwd        # Line count
+# wc -w /etc/passwd        # Word count
+# wc -c /etc/passwd        # Character count</code></pre>
+
+---
+
+<h2 class="section-heading">✨ TAB Key: Auto-completion</h2>
+
+<ul class="custom-bullets">
+  <li>Press <strong>Tab</strong> to auto-complete file names, paths, or commands</li>
+  <li>Press <strong>Tab</strong> twice to view all matching options</li>
+</ul>
+
+
+
+
+<h2 class="section-heading">🔄 Command Completion and Continuation</h2>
+
+<h3 class="subheading">⚡ Using TAB for Auto-Completion</h3>
+<ul class="custom-bullets">
+  <li><strong>Tab</strong>: Auto-completes commands or file names</li>
+  <li><strong>Tab (twice)</strong>: Lists all possible completions</li>
+</ul>
+
+---
+
+<h3 class="subheading">⤵️ Breaking a Long Command Into Multiple Lines</h3>
+<p>Use the backslash <code>\</code> character at the end of a line to tell the shell the command continues.</p>
+
+<pre><code># cat /etc/passwd \
+> /etc/group \
+> /etc/shadow
+
+# cat /etc/passwd /etc/group /etc/shadow | grep root</code></pre>
+
+---
+
+<h2 class="section-heading">📜 Using the <code>history</code> Command</h2>
+
+<ul class="custom-bullets">
+  <li><code>history</code>: Show previously executed commands with numbers</li>
+  <li><code>history | less</code>: Scrollable command history</li>
+  <li><code>history -c</code>: Clear all history</li>
+  <li><code>history -d [n]</code>: Delete entry [n]</li>
+  <li><code>!102</code>: Execute command number 102</li>
+  <li><code>!ls</code>: Run last command starting with <code>ls</code></li>
+  <li><code>Alt + .</code>: Insert last word of previous command (repeat to cycle backward)</li>
+</ul>
+
+---
+
+<h2 class="section-heading">⌨️ Command Line Shortcuts (Table)</h2>
+
+<table class="comparison-table">
+  <thead>
+    <tr>
+      <th>Shortcut</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ctrl + A</td>
+      <td>Jump to the beginning of the command line</td>
+    </tr>
+    <!-- Continue with more rows as needed -->
+  </tbody>
+</table>
+
+
+
+<!-- Continued HTML Table from Command Shortcuts Section -->
+<table class="comparison-table">
+  <tr>
+    <td>Ctrl + E</td>
+    <td>Jump to the end of the command line</td>
+  </tr>
+  <tr>
+    <td>Ctrl + U</td>
+    <td>Clear from cursor to the beginning of the line</td>
+  </tr>
+  <tr>
+    <td>Ctrl + K</td>
+    <td>Clear from cursor to the end of the line</td>
+  </tr>
+  <tr>
+    <td>Ctrl + R</td>
+    <td>Search command history for a pattern</td>
+  </tr>
+</table>
+
+---
+
+<h2 class="section-heading">📖 View File Contents with <code>less</code> & <code>more</code></h2>
+
+<pre><code># less /etc/passwd       # View content with navigation
+(Press q to quit)
+
+# more /etc/passwd       # View content page-by-page (auto quit at end)</code></pre>
+
+---
+
+<h2 class="section-heading">ℹ️ Use of <code>whatis</code> Command</h2>
+
+<pre><code># whatis cat             # Short description of 'cat'
+# whatis vim             # Short description of 'vim'
+
+# updatedb               # If 'whatis' isn't working
+# mandb                  # Update man database</code></pre>
+
+<div class="image-container">
+  <img src="Linux_files/image009.jpg" alt="whatis vim screenshot" width="430" />
+  <p><em>Example: whatis vim</em></p>
+</div>
+
+---
+
+<h3 class="subheading">🧾 User and Group File References</h3>
+
+<div class="custom-notes">
+  <p><strong>User info:</strong> <code>/etc/passwd</code></p>
+  <p><strong>Password info:</strong> <code>/etc/shadow</code></p>
+  <p><strong>Group info:</strong> <code>/etc/group</code></p>
+</div>
+
+
+
+<h2 class="section-heading">📝 Exercise Questions</h2>
+<ol>
+  <li>Display the current time and date:
+    <pre><code>$ date</code></pre>
+  </li>
+  <li>Display the current time in 12-hour format:
+    <pre><code>$ date +%r</code></pre>
+  </li>
+  <li>Check file type of <code>zcat</code>:
+    <pre><code>$ file zcat</code></pre>
+  </li>
+  <li>Use <code>wc</code> and shortcut to check size of zcat:
+    <pre><code>$ wc [Alt + .]
+$ wc zcat</code></pre>
+  </li>
+  <li>Show the first 10 lines of <code>zcat</code>:
+    <pre><code>$ head [Alt + .]
+$ head zcat</code></pre>
+  </li>
+  <li>Show the last 10 lines of the zcat file</li>
+  <li>Repeat the previous command with fewer keystrokes:
+    <pre><code>$ !!</code></pre>
+  </li>
+  <li>Modify previous command to show last 20 lines:
+    <pre><code>$ tail -n 20 zcat</code></pre>
+  </li>
+  <li>Use shell editing/history to re-run <code>date +%r</code></li>
+</ol>
+
+---
+
+<h2 id="_Toc185703274" class="section-heading">📂 3. Managing Files From the Command Line</h2>
+
+<h3 class="subheading">📁 Linux File System Hierarchy</h3>
+<ul class="custom-bullets">
+  <li>Everything in Linux is stored in an inverted tree structure of directories.</li>
+  <li>The root of this tree is the top-level <code>/</code> directory.</li>
+  <li><code>/</code> is also used as a path separator in file names.</li>
+</ul>
+
+<h3 class="subheading">🗂️ Red Hat Enterprise Linux Directory Highlights</h3>
+<ul class="custom-bullets">
+  <li><code>/usr</code>: Installed software, libraries, and read-only system data</li>
+  <li><code>/usr/bin</code>: User commands (for regular users)</li>
+  <li><code>/usr/sbin</code>: System/admin tools (for superusers)</li>
+  <li><code>/usr/local</code>: Locally compiled/custom software</li>
+</ul>
+
+<h3 class="subheading">🔎 Finding Command Locations</h3>
+<pre><code># which useradd
+  → /usr/sbin/useradd
+
+# which ls
+  → /usr/bin/ls
+
+# which cat
+  → /usr/bin/cat
+
+# /usr/bin/cat /etc/passwd | grep Parwez</code></pre>
+
+<h3 class="subheading">🧭 PATH Environment Variable</h3>
+<pre><code># PATH                  # Shows current $PATH
+# echo $PATH            # Display search path for commands</code></pre>
+
+<h3 class="subheading">📌 View Standard Command Directories</h3>
+<pre><code># ls /bin/              # List basic binary tools
+# ls /sbin/             # List system binaries</code></pre>
+
+
+
+
+
+<h3 class="subheading">📊 Checking File and Command Statistics</h3>
+<pre><code># ls /
+# ls -l /
+# ls -l /bin/ | wc -l           # Count files in /bin
+# ls -l /usr/bin/ | wc -l       # Count files in /usr/bin</code></pre>
+
+<div class="image-container">
+  <img src="Linux_files/image010.png" alt="Root filesystem structure" width="600" />
+  <p><em>Visual: Root (/) and subdirectories like bin, boot, dev, etc, home, root, usr, var</em></p>
+</div>
+
+---
+
+<h3 class="subheading">📁 / (root) Directory</h3>
+<ul class="custom-bullets">
+  <li>This is the root directory (top of the filesystem)</li>
+  <li>All other directories are placed beneath it</li>
+</ul>
+
+---
+
+<h3 class="subheading">👑 /root — Root User's Home Directory</h3>
+<ul class="custom-bullets">
+  <li>Home directory for the <strong>root</strong> (administrator) account</li>
+  <li><strong>Note:</strong> In Linux/Unix, the administrator is called <code>root</code></li>
+</ul>
+
+<pre><code># cd /root/        # Change to root’s home
+# pwd              # Show current directory
+# ls               # List contents</code></pre>
+
+---
+
+<h3 class="subheading">👤 /home — Regular User Directories</h3>
+<ul class="custom-bullets">
+  <li>Each user gets a separate subdirectory inside <code>/home</code></li>
+</ul>
+
+<pre><code># cd /home         # Navigate to user directories</code></pre>
+
+---
+
+<h3 class="subheading">🧪 /boot — Bootloader & Kernel Files</h3>
+<ul class="custom-bullets">
+  <li>Contains the <strong>kernel</strong> and boot-related files</li>
+  <li>Includes bootloader (GRUB) configs and initrd images</li>
+</ul>
+
+<pre><code># cd /boot/        # Explore boot directory</code></pre>
+
+---
+
+<h3 class="subheading">🔧 /bin — Essential User Binaries</h3>
+<ul class="custom-bullets">
+  <li><strong>bin</strong> = Binary</li>
+  <li>Contains core utilities needed by all users, like <code>cat</code>, <code>chmod</code>, <code>ping</code></li>
+</ul>
+
+
+
+<h3 class="subheading">🛠️ /sbin — System Binaries</h3>
+<ul class="custom-bullets">
+  <li><strong>sbin</strong> stands for System Binary</li>
+  <li>Contains system-level commands used by the superuser only (root)</li>
+  <li>Examples: <code>fdisk</code>, <code>useradd</code></li>
+</ul>
+
+---
+
+<h3 class="subheading">📦 /usr — Unix System Resources</h3>
+<ul class="custom-bullets">
+  <li><code>/usr</code> contains programs and libraries for user applications</li>
+  <li>Similar in purpose to the “Program Files” directory on Windows</li>
+</ul>
+
+---
+
+<h3 class="subheading">📁 /var — Variable Data</h3>
+<ul class="custom-bullets">
+  <li><code>var</code> stands for variable</li>
+  <li>Used to store data that changes frequently, such as:
+    <ul class="custom-bullets">
+      <li>Log files</li>
+      <li>Cache directories</li>
+      <li>Mail spools</li>
+      <li>Web content</li>
+    </ul>
+  </li>
+</ul>
+
+<pre><code># cd /var/      # Change to the /var directory</code></pre>
+
+---
+
+<h3 class="subheading">🖧 /dev — Device Files</h3>
+<ul class="custom-bullets">
+  <li><code>dev</code> stands for device</li>
+  <li>Contains representations of all hardware devices as files</li>
+</ul>
+
+<pre><code># cd /dev/      # Explore device nodes</code></pre>
+
+---
+
+<h3 class="subheading">⚙️ /etc — Configuration Files</h3>
+<ul class="custom-bullets">
+  <li><code>etc</code> stands for “et cetera”</li>
+  <li>This directory houses most system-wide <strong>configuration files</strong></li>
+  <li><strong>Note:</strong> User accounts are listed in <code>/etc/passwd</code></li>
+</ul>
+
+<pre><code># /usr/sbin/useradd imran
+# /usr/bin/cat /etc/passwd | grep imran</code></pre>
+
+<p>SSH config file can be found here:</p>
+<pre><code>/etc/ssh/sshd.conf</code></pre>
+
+
+
+<h3 class="subheading">📦 /opt — Optional Software</h3>
+<ul class="custom-bullets">
+  <li><code>opt</code> stands for Optional</li>
+  <li>Used to store third-party software like OpenOffice or antivirus tools</li>
+</ul>
+
+---
+
+<h3 class="subheading">💽 /media — Removable Media Mount Points</h3>
+<ul class="custom-bullets">
+  <li>Default mount point for removable storage like CD-ROMs and USB drives</li>
+</ul>
+
+---
+
+<h3 class="subheading">🔄 /run — Runtime Information</h3>
+<ul class="custom-bullets">
+  <li>Contains runtime data for processes started after the last boot</li>
+  <li>Files like PID files and lock files are stored here</li>
+  <li>This directory is cleared at every reboot</li>
+</ul>
+
+<pre><code># cd /run/</code></pre>
+
+---
+
+<h3 class="subheading">🧪 /tmp — Temporary File Directory</h3>
+<ul class="custom-bullets">
+  <li>World-writable space for short-lived temporary files</li>
+  <li>Files older than 10 days are deleted automatically</li>
+  <li>Also see <code>/var/tmp</code> for longer-lasting temp files (30+ days)</li>
+</ul>
+
+<pre><code># cd /tmp/</code></pre>
+
+---
+
+<h3 class="subheading">📍 Absolute vs Relative Paths</h3>
+
+<h4>🔗 Absolute Path:</h4>
+<ul class="custom-bullets">
+  <li>Starts from the root <code>/</code> and lists all subdirectories</li>
+  <li>Example: <code>/home/imran/documents/report.txt</code></li>
+</ul>
+
+<h4>🧭 Relative Path:</h4>
+<ul class="custom-bullets">
+  <li>Starts from the current working directory</li>
+  <li>Does not begin with <code>/</code></li>
+  <li>Example: <code>documents/report.txt</code></li>
+</ul>
+
+<pre><code># mkdir Data                # Relative path: creates 'Data' in current directory
+# ls                        # List contents
+# mkdir /Data               # Absolute path: creates 'Data' under root
+# cp /etc/hosts             # Absolute path copy
+# cp /etc/hosts /root/Desktop/   # Relative destination
+# ls /root/Desktop/         # Confirm copy</code></pre>
+
+
+
+
+<h3 class="subheading">🧭 Navigation Path</h3>
+<ul class="custom-bullets">
+  <li>Navigation commands help you move around the filesystem</li>
+  <li>Example: <code>cd /home/imran/documents</code></li>
+</ul>
+
+---
+
+<h2 class="section-heading">📂 Managing Files Using Command-Line Tools</h2>
+
+<h3 class="subheading">📌 Using <code>pwd</code></h3>
+<ul class="custom-bullets">
+  <li><code>pwd</code>: Print Working Directory</li>
+  <li>Shows the full path of your current shell session</li>
+</ul>
+
+<pre><code>Root user home: /root
+Regular user home: /home
+
+# pwd               # Show current directory
+# su - u1           # Switch to user u1</code></pre>
+
+---
+
+<h3 class="subheading">📁 Using <code>mkdir</code> to Create Directories</h3>
+<ul class="custom-bullets">
+  <li><code>mkdir</code> = Make Directory</li>
+  <li>Creates directories at specified paths</li>
+  <li><code>-p</code>: Creates parent directories as needed</li>
+  <li><code>-v</code>: Shows verbose output</li>
+</ul>
+
+<pre><code># mkdir "folder name"          # Create a directory
+# mkdir --help                 # Show help info
+# mkdir -p                     # Parent directory mode
+
+# mkdir D1                     # In current directory
+# mkdir /root/Desktop/D1       # Absolute path
+
+# ls -R /root/Desktop/D1       # Recursively list contents
+# mkdir ../../Parwez           # Create dir two levels up
+# ls ../..                     # Move up two levels
+
+# mkdir {1..5}                 # Create directories 1 to 5
+# mkdir imran{1..8}            # imran1 imran2 ... imran8
+# mkdir {A..Z}                 # A to Z directories
+
+# mkdir -p A/B/C/D             # Create nested structure
+# ls -l A/
+# ls -l A/B
+# ls -l A/B/C</code></pre>
+
+
+
+<h3 class="subheading">📁 Creating Directories — Advanced <code>mkdir</code> Usage</h3>
+
+<ul class="custom-bullets">
+  <li><code>mkdir -pv A/B/C/D</code> → <code>-v</code> prints progress, <code>-p</code> creates nested folders</li>
+  <li><code>mkdir -p batch/{B31,B32,B33}</code> → Create multiple folders in one go</li>
+  <li><code>mkdir MCC; cd MCC; mkdir SEM-1 SEM-2; cd SEM-1; mkdir HW OS CCNA; cd ..; cd SEM-2; mkdir Server Linux AWS 365; cd ../..</code> → Nested education structure</li>
+  <li><code>cd ../..</code> → Move up two directories</li>
+  <li><code>tree MCC</code> → View folder structure (requires <code>tree</code> package)</li>
+  <li><code>rm -rf *</code> → Caution: Delete everything in current dir</li>
+  <li><code>mkdir -p MCC/SEM-1/{HW,OS,CCNA} MCC/SEM-2/{Server,Linux,AWS,365}</code> → One-liner batch structure</li>
+  <li><code>tree A</code> or <code>tree</code> → Tree view of a specific folder</li>
+</ul>
+
+---
+
+<h3 class="subheading">🙈 Creating Hidden Folders</h3>
+
+<ul class="custom-bullets">
+  <li><code>mkdir .foldername</code> → Dot-prefix makes it hidden</li>
+  <li><code>ls -a</code> → Show all files including hidden</li>
+  <li><code>ls -la</code> → Detailed list including hidden</li>
+</ul>
+
+---
+
+<h3 class="subheading">📌 Terminal Tips & Notes</h3>
+
+<table class="comparison-table">
+  <tbody>
+    <tr>
+      <td><code>#</code></td>
+      <td>Used for adding comments in scripts or notes</td>
+    </tr>
+    <tr>
+      <td><code>></code></td>
+      <td>Redirect output to another file</td>
+    </tr>
+    <tr>
+      <td><code>rm -rf *</code></td>
+      <td>Forcefully delete all files and folders in current dir</td>
+    </tr>
+    <tr>
+      <td><code>lrwxrwxrwx</code></td>
+      <td>'l' at start of permissions = symbolic link</td>
+    </tr>
+    <tr>
+      <td><code>df -hT</code></td>
+      <td>Disk usage (human-readable), show filesystem type</td>
+    </tr>
+    <tr>
+      <td><strong>Spacebar</strong></td>
+      <td>Scroll down quickly when reading via <code>less</code> or <code>more</code></td>
+    </tr>
+    <tr>
+      <td>GUI user login</td>
+      <td>Profile is created at first login</td>
+    </tr>
+    <tr>
+      <td>User creation</td>
+      <td>Also creates a group with same name</td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<h3 class="subheading">🧹 <code>rm</code> & <code>rmdir</code> — Removing Files and Directories</h3>
+
+<ul class="custom-bullets">
+  <li><code>rm</code>: Remove files</li>
+  <li><code>rm -r</code> or <code>rm --recursive</code>: Remove directories recursively</li>
+  <li><code>rmdir</code>: Removes empty directories only</li>
+</ul>
+
+
+
+<h3 class="subheading">🗑️ Removing Files and Directories — <code>rm</code> and <code>rmdir</code></h3>
+
+<ul class="custom-bullets">
+  <li><code>rm</code>: Removes files and directories</li>
+  <li>Options:
+    <ul class="custom-bullets">
+      <li><code>-r</code>: Recursive (remove contents inside directories)</li>
+      <li><code>-v</code>: Verbose (print what is being removed)</li>
+      <li><code>-f</code>: Force (do not prompt for confirmation)</li>
+      <li><code>-d</code>: Remove empty directory (like <code>rmdir</code>)</li>
+      <li><code>-i</code>: Prompt before every removal</li>
+    </ul>
+  </li>
+  <li><code>rmdir</code>: Only removes <em>empty</em> directories</li>
+</ul>
+
+<pre><code># rmdir Data                      # Remove empty directory
+# rm -v File1                    # Delete file with confirmation
+# rm -vf File2                   # Forcefully delete file
+# rm -vr foldername              # Verbose recursive delete
+# rm -r Data                     # Remove directory and contents
+# rm -rvf Data                   # Forcefully remove directory with print
+# rm -rf A                       # Force remove folder A and contents
+# rm -rf *                       # ⚠️ DANGER: Delete everything in current folder
+# rm -ri                         # Interactive delete (prompts before each)
+# rm -d Data                     # Remove if empty (same as rmdir)</code></pre>
+
+---
+
+<h3 class="subheading">📂 Using the <code>ls</code> Command</h3>
+
+<ul class="custom-bullets">
+  <li><code>ls</code>: Lists files and directories</li>
+  <li>Common options:
+    <ul class="custom-bullets">
+      <li><code>-l</code>: Long format (permissions, owners, timestamps)</li>
+      <li><code>-a</code>: Include hidden files</li>
+      <li><code>-d</code>: Show directory itself, not its contents</li>
+      <li><code>-R</code>: Recursive listing (shows tree-like structure)</li>
+      <li><code>-h</code>: Human-readable sizes (used with <code>-l</code>)</li>
+      <li><code>-i</code>: Show inode number</li>
+      <li><code>-r</code>: Reverse sorting order</li>
+    </ul>
+  </li>
+</ul>
+
+<pre><code># ls -ld RHEL-8/                 # Show metadata of RHEL-8 dir
+# ls -lr                         # Long listing, reverse order
+# ls -li                         # Long listing with inode numbers
+# ls -l thesis*                  # Match files with 'thesis' prefix</code></pre>
+
+---
+
+<h3 class="subheading">📁 Navigating with <code>cd</code></h3>
+<ul class="custom-bullets">
+  <li><code>cd</code>: Change the shell’s current working directory</li>
+  <li>If no directory is provided, returns to the user’s home directory</li>
+</ul>
+
+<pre><code># cd /etc                       # Navigate to /etc
+# cd                            # Return to home directory</code></pre>
+
+
+
+
+
+<h3 class="subheading">🏠 Using <code>cd</code> to Navigate Directories</h3>
+
+<ul class="custom-bullets">
+  <li>The prompt shows <code>~</code> when you're in your home directory</li>
+  <li>Basic navigation examples:</li>
+</ul>
+
+<pre><code># cd Desktop/              # Go to Desktop
+# cd /root/Desktop         # Full absolute path
+# pwd                      # Show current path
+# cd .                     # Stay in current directory
+# cd ~Jetking              # Switch to Jetking’s home directory
+# cd /home/Jetking/        # Alternate method to access Jetking's home</code></pre>
+
+<p><strong>cd Options:</strong></p>
+<pre><code># cd                      # Return to home directory
+# cd -                    # Move to previous directory
+# cd ..                   # Go up one directory
+# cd ../..                # Go up two directories</code></pre>
+
+<ul class="custom-bullets">
+  <li><code>.</code> represents current directory</li>
+  <li><code>..</code> represents parent directory</li>
+  <li><code>~</code> means home directory</li>
+</ul>
+
+---
+
+<h3 class="subheading">📄 Creating & Combining Files with <code>cat</code></h3>
+
+<ul class="custom-bullets">
+  <li><code>cat</code> = Concatenate: create, view, and combine files</li>
+  <li><code>Ctrl + D</code>: Save and exit when typing with <code>cat ></code></li>
+</ul>
+
+<pre><code># cat > "filename"             # Create a file
+# cat "filename"               # View file contents
+# cat >> "filename"            # Append to existing file
+# cat file1.txt file2.txt      # View multiple files together
+# cat file1.txt file2.txt >> file3.txt   # Merge into new file
+# cat > file3.txt < file2.txt            # Redirect into file3
+# cat >> file3.txt < file1.txt           # Append from another file
+# cat > .Jetking.txt           # Create a hidden file (starts with dot)</code></pre>
+
+---
+
+<h3 class="subheading">🆕 Creating Files with <code>touch</code></h3>
+
+<ul class="custom-bullets">
+  <li><code>touch</code> updates a file’s modification time</li>
+  <li>If the file doesn’t exist, it creates a blank file</li>
+</ul>
+
+<pre><code># touch newfile.txt            # Create a blank file
+# touch .hiddenfile            # Hidden file (dot prefix)</code></pre>
+
+
+
+<h3 class="subheading">📄 Creating and Modifying Files with <code>touch</code></h3>
+
+<ul class="custom-bullets">
+  <li>Create an empty file or update an existing file’s timestamp</li>
+</ul>
+
+<pre><code># touch Parwez                        # Create blank file
+# file Parwez                        # Check file type
+# echo "My Name is MD.Parwez" > Parwez
+# cat Parwez                         # View file content
+# file Parwez                        # Verify file is now text
+
+# touch file{1..5}.txt               # Create file1.txt to file5.txt
+# tree A                             # View directory A’s structure
+# touch file1.txt                    # Updates timestamp if it already exists</code></pre>
+
+---
+
+<h3 class="subheading">🔊 Using <code>echo</code> to Print and Save Text</h3>
+
+<ul class="custom-bullets">
+  <li>Displays text/variables and can redirect output to files</li>
+</ul>
+
+<pre><code># echo This is Test File
+# echo "This is Test File"
+
+# echo "This is Test File" > echo_file.txt      # Create/write file
+# echo "welcome to Jetking" > jet.txt
+# echo "add new" >> jet.txt                      # Append to file
+
+# cat echo_file.txt                              # View content
+
+# echo This is Test File2 >> echo_file.txt
+# echo This is Test File3 >> echo_file.txt
+# echo This is Test File4 >> echo_file.txt
+
+# cat echo_file.txt                              # View updated content
+
+# echo $USER                                     # Print current user
+# echo $HOSTNAME                                 # Print hostname
+# echo $SHELL                                    # Show shell type
+# man echo                                       # Manual for echo</code></pre>
+
+---
+
+<h3 class="subheading">📁 Copying Files with <code>cp</code></h3>
+
+<ul class="custom-bullets">
+  <li>Used to copy single or multiple files and directories</li>
+</ul>
+
+<pre><code>cp &lt;file&gt; &lt;destination&gt;                     # Basic usage
+
+# Options:
+-r      : Recursively copy directories
+-v      : Verbose (show copying process)
+
+# Example:
+cp -r /source/directory /destination/directory
+cp -v file1.txt file2.txt /destination/directory</code></pre>
+
+
+
+
+<h3 class="subheading">📁 More <code>cp</code> Options</h3>
+
+<ul class="custom-bullets">
+  <li><code>-f</code>: Force overwrite if the destination file can’t be opened</li>
+  <li><code>-p</code>: Preserve original file attributes (mode, ownership, timestamps)</li>
+</ul>
+
+<pre><code># cp -f file1.txt /dest/file1.txt         # Force overwrite
+# cp -p file1.txt /dest/                  # Preserve file metadata
+# cp -rvfp /source/ /destination/         # Combine all common options
+</code></pre>
+
+<p><strong>Note:</strong> Use <code>cp -r</code> to copy entire directories.</p>
+
+<pre><code># cp jet.txt A/
+# cp /students.txt /root/Desktop/B/
+# touch file{1..8}.txt
+# cp -r /B33/ /root/Desktop/
+# cp -r /etc/ /root/Desktop/
+# cp -r /etc/ .                          # Copy etc into current directory</code></pre>
+
+<p>Without <code>-r</code>, <code>cp</code> cannot handle directories.</p>
+
+---
+
+<h3 class="subheading">📏 Disk Usage Utilities</h3>
+
+<pre><code># du -sh /etc/      # Human-readable summary of /etc size
+# du -s /etc/       # Disk usage summary in blocks
+# man pwd           # Manual for pwd
+# man useradd       # Manual for useradd</code></pre>
+
+---
+
+<h3 class="subheading">🚚 Using <code>mv</code> to Move or Rename</h3>
+
+<ul class="custom-bullets">
+  <li><code>mv</code> moves or renames files and directories</li>
+  <li>It does not alter file content—just location or name</li>
+</ul>
+
+<pre><code># mv file1.txt /new/location/        # Move file
+# mv oldname.txt newname.txt         # Rename file
+# mv dir1/ /another/path/            # Move directory</code></pre>
+
+
+
+
+
+
+
+<h3 class="subheading">📝 Renaming or Moving Multiple Files and Folders with <code>mv</code></h3>
+
+<pre><code># mv &lt;oldname&gt; &lt;newname&gt;                    # Rename a file
+# mv folder1 folder2 file1.txt file2.txt /home/user/destination/
+                                             # Move multiple items to destination</code></pre>
+
+---
+
+<h3 class="subheading">🔗 Managing Links Between Files</h3>
+
+<h4>📌 What is a Hard Link?</h4>
+<ul class="custom-bullets">
+  <li>Every file starts with one hard link: the filename pointing to file data</li>
+  <li>Creating a new hard link gives the same data another name</li>
+  <li>The link behaves just like the original: same inode, permissions, and content</li>
+</ul>
+
+<pre><code># ln File01.txt Hard_File01.txt           # Create a hard link
+# ls -li                                  # Check inode numbers to confirm
+</code></pre>
+
+<h4>🧠 Facts About Hard Links:</h4>
+<ul class="custom-bullets">
+  <li>Indistinguishable from the original</li>
+  <li>Same link count, permissions, owner, timestamps, content</li>
+  <li>If original is deleted, the data remains accessible from the link</li>
+</ul>
+
+<h4>⚠️ Limitations:</h4>
+<ul class="custom-bullets">
+  <li>Cannot create hard links to directories</li>
+  <li>Cannot create hard links across different file systems</li>
+</ul>
+
+---
+
+<h3 class="subheading">📌 Summary: Copy vs Hard Link</h3>
+
+| Feature               | Copy                          | Hard Link                    |
+|----------------------|-------------------------------|------------------------------|
+| Creates new data?     | Yes                           | No                           |
+| Shares inode?         | No                            | Yes                          |
+| Cross-filesystem?     | Yes                           | No                           |
+| Affects others on delete? | No                        | No, as long as one link exists |
+
+
+
+
+<h3 class="subheading">🔄 Copy vs Hard Link – Inode and Timestamp</h3>
+<ul class="custom-bullets">
+  <li>📁 Copying a file creates a new inode and updates the timestamp</li>
+  <li>🔗 Hard links share the same inode and preserve timestamps until one is explicitly modified</li>
+</ul>
+
+---
+
+<h3 class="subheading">🔗 What is a Soft Link (Symbolic Link)?</h3>
+<ul class="custom-bullets">
+  <li>🧶 Created using <code>ln -s</code></li>
+  <li>Special file that references another file or directory</li>
+  <li>✅ Can link across file systems and to directories</li>
+  <li>⚠️ If original is deleted, the soft link becomes a dangling link</li>
+</ul>
+
+<pre><code># ln -s /students.txt /root/Desktop/students.txt     # Soft link
+# cd ~/Desktop
+# ln -s /etc/hosts Myhosts                           # Soft link to hosts</code></pre>
+
+<p><strong>Note:</strong> If the original file is deleted and a new one is created with the same name, the soft link points to the new file. Hard links do not behave this way.</p>
+
+---
+
+<h3 class="subheading">🧪 PRACTICE: Organize Media and Link Across Folders</h3>
+
+<pre><code>$ mkdir Music Pictures Videos
+
+$ touch song{1..6}.mp3
+$ touch snap{1..6}.jpg
+$ touch film{1..6}.avi
+
+$ mv song{1..6}.mp3 Music/
+$ mv snap{1..6}.jpg Pictures/
+$ mv film{1..6}.avi Videos/
+
+$ ls -l Music Pictures Videos
+
+$ mkdir friends family work
+$ cd friends
+$ cp ~/Music/song{1..2}.mp3 ~/Pictures/snap{1..2}.jpg ~/Videos/film{1..2}.avi .
+
+$ cd ../family
+$ cp ~/Music/song{3..4}.mp3 ~/Pictures/snap{3..4}.jpg ~/Videos/film{3..4}.avi .
+
+$ cd ../work
+$ cp ~/Music/song{5..6}.mp3 ~/Pictures/snap{5..6}.jpg ~/Videos/film{5..6}.avi .
+
+$ cd
+$ rm -r family friends
+$ cd work
+$ rm song{5..6}.mp3 snap{5..6}.jpg film{5..6}.avi
+$ cd
+$ rmdir work
+$ ls -l</code></pre>
+
+
+
+
+  <td width=450 valign=top style='width:337.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class="MsoListParagraph" style="margin:0cm;line-height:normal;">
+      <span style="font-size:12.0pt">Any uppercase character.</span>
+    </p>
+  </td>
+</tr>
+</table>
+
+---
+
+<h3 class="section-heading">🧪 Practice 2: Creating Hard and Soft Links</h3>
+
+<pre><code>$ ls -l files/source.file
+
+$ ln /home/student/files/source.file \
+> /home/student/backups/source.backup        # Hard link
+
+$ ls -l /home/student/files/
+$ ls -l /home/student/backups/
+
+$ ln -s /tmp /home/student/tempdir           # Soft (symbolic) link
+$ ls -l /home/student/tempdir                # Inspect soft link</code></pre>
+
+---
+
+<h3 class="section-heading">🔍 Shell Pattern Matching Cheat Sheet</h3>
+
+<table class="comparison-table">
+  <thead>
+    <tr>
+      <th>Pattern</th>
+      <th>Matches</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>*</code></td>
+      <td>Any string of zero or more characters</td>
+    </tr>
+    <tr>
+      <td><code>?</code></td>
+      <td>Any single character</td>
+    </tr>
+    <tr>
+      <td><code>[abc]</code></td>
+      <td>Any one character inside the brackets</td>
+    </tr>
+    <tr>
+      <td><code>[!abc]</code> or <code>[^abc]</code></td>
+      <td>Any one character NOT inside the brackets</td>
+    </tr>
+    <tr>
+      <td><code>[[:alpha:]]</code></td>
+      <td>Any alphabetic character (A-Z, a-z)</td>
+    </tr>
+    <tr>
+      <td><code>[[:lower:]]</code></td>
+      <td>Any lowercase letter</td>
+    </tr>
+    <tr>
+      <td><code>[[:upper:]]</code></td>
+      <td>Any uppercase letter</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+<h3 class="section-heading">🔡 More Shell Pattern Matching</h3>
+
+<table class="comparison-table">
+  <thead>
+    <tr>
+      <th>Pattern</th>
+      <th>Matches</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>[[:alnum:]]</code></td>
+      <td>Any alphabetic character or digit</td>
+    </tr>
+    <tr>
+      <td><code>[[:punct:]]</code></td>
+      <td>Any printable punctuation character (non-space, non-alphanumeric)</td>
+    </tr>
+    <tr>
+      <td><code>[[:digit:]]</code></td>
+      <td>Any digit from 0 to 9</td>
+    </tr>
+    <tr>
+      <td><code>[[:space:]]</code></td>
+      <td>Any single whitespace character (space, tab, newline, etc.)</td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<h3 class="section-heading">🧪 Practice: Filename Globbing</h3>
+
+<pre><code>$ mkdir glob
+$ cd glob
+$ touch alfa bravo charlie delta echo able baker cast dog easy
+
+$ ls              # Show all files
+$ ls a*           # Starts with "a"
+$ ls *a*          # Contains "a"
+$ ls [ac]*        # Starts with "a" or "c"
+$ ls ????         # Exactly 4 characters
+$ ls ?????        # Exactly 5 characters
+</code></pre>
+
+---
+
+<h3 class="subheading">🏠 Tilde Expansion</h3>
+<ul class="custom-bullets">
+  <li><code>~</code> expands to the current user’s home directory</li>
+  <li><code>~username</code> points to the home of a specific user</li>
+</ul>
+
+---
+
+<h2 id="_Toc185703275" class="section-heading">📘 4. Getting Help in Red Hat Enterprise Linux</h2>
+
+<h3 class="subheading">📖 Reading Manual Pages (<code>man</code>)</h3>
+
+<ul class="custom-bullets">
+  <li>Man pages are a built-in reference for Linux commands</li>
+  <li>Update index: <code>mandb</code></li>
+</ul>
+
+<pre><code># mandb                  # Update man database
+# man man                # Help on how 'man' works
+# man mkdir              # Help on 'mkdir'
+# mkdir --help           # Display short help text
+# yelp                   # Graphical help browser (if installed)</code></pre>
+
+<h3 class="subheading">🔎 Searching Man Pages by Keyword</h3>
+<ul class="custom-bullets">
+  <li>Use <code>man -k</code> or <code>apropos</code> to search man pages by keyword</li>
+  <li>Requires up-to-date database from <code>mandb</code></li>
+</ul>
+
+
+
+
+
+<h3 class="subheading">🔍 More Help & Discovery Tools</h3>
+
+<pre><code># man -K pattern             # Search full man pages for a keyword (not just name/description)
+# info                       # Enter the info browsing system
+# info cp                    # Info page for 'cp'
+# pinfo cp                   # Colorful, user-friendly alternative (if installed)
+# which mkdir                # Find location of 'mkdir' executable
+# which useradd              # Find location of 'useradd'</code></pre>
+
+---
+
+<h2 id="_Toc185703276" class="section-heading">📝 5. Creating, Viewing and Editing Text Files</h2>
+
+<h3 class="subheading">✍️ Text Editors Overview</h3>
+
+<ul class="custom-bullets">
+  <li><strong>VI:</strong> Classic, available everywhere, runs in command-line, very powerful</li>
+  <li><strong>NANO:</strong> Beginner-friendly, easy interface, all instructions shown in-terminal</li>
+  <li><strong>VIM (VI Improved):</strong> Feature-rich version of VI with plugins, syntax highlighting, GUI (GVim)</li>
+</ul>
+
+<pre><code># vimtutor             # Launch VIM tutorial in terminal
+</code></pre>
+
+---
+
+<h3 class="subheading">🧩 VIM’s Three Modes</h3>
+
+<ol>
+  <li><strong>Command Mode:</strong> Default mode for navigating and giving commands</li>
+  <li><strong>Insert Mode:</strong> Enables normal text editing</li>
+  <li><strong>Ex Mode:</strong> Type colon-prefixed commands like <code>:wq</code> to write and quit</li>
+</ol>
+
+---
+
+<h3 class="subheading">🔁 Switching to Insert Mode (from Command Mode)</h3>
+
+<ul class="custom-bullets">
+  <li><code>i</code> → Insert at cursor</li>
+  <li><code>I</code> → Insert at beginning of line</li>
+</ul>
+
+
+
+
+
+<h3 class="subheading">🖊 More Ways to Enter Insert Mode in VIM</h3>
+<ul class="custom-bullets">
+  <li><code>a</code>: Append text after the current cursor position</li>
+  <li><code>A</code>: Append at the end of the current line</li>
+  <li><code>o</code>: Open a new line below and enter insert mode</li>
+  <li><code>O</code>: Open a new line above and enter insert mode</li>
+</ul>
+
+---
+
+<h3 class="subheading">⚙️ Command Mode Basics</h3>
+<ul class="custom-bullets">
+  <li><code>dd</code>: Delete current line</li>
+  <li><code>2dd</code>: Delete two lines</li>
+  <li><code>yy</code>: Copy current line (yank)</li>
+  <li><code>2yy</code>: Copy two lines</li>
+  <li><code>p</code>: Paste after cursor</li>
+  <li><code>u</code>: Undo last change</li>
+  <li><code>cc</code>: Cut the current line and switch to insert mode</li>
+  <li><code>5cc</code>: Cut five lines</li>
+  <li><code>Ctrl + r</code>: Redo last undone change</li>
+  <li><code>gg</code>: Move to start of file</li>
+  <li><code>G</code>: Move to end of file</li>
+</ul>
+
+---
+
+<h3 class="subheading">📘 Extended Command Mode (Ex Mode)</h3>
+<ul class="custom-bullets">
+  <li><code>:q</code>: Quit without saving</li>
+  <li><code>:q!</code>: Force quit without saving</li>
+  <li><code>:w</code>: Write (save) file</li>
+  <li><code>:wq</code>: Write and quit</li>
+  <li><code>:wq!</code>: Force save and quit</li>
+  <li><code>:set number</code> or <code>:se nu</code>: Show line numbers</li>
+  <li><code>:set nonumber</code> or <code>:se nonu</code>: Hide line numbers</li>
+</ul>
+
+
+
+
+<h3 class="subheading">🔎 VIM Search and Replace</h3>
+
+<ul class="custom-bullets">
+  <li><code>:85</code> → Go to line 85</li>
+  <li><code>:/string</code> → Search for "string" from current cursor downward</li>
+  <li><code>:1,$s/Old/New</code> → Replace "Old" with "New" throughout the file (line 1 to end)</li>
+  <li><code>:%s/string1/string2</code> → Replace all "string1" with "string2"</li>
+</ul>
+
+---
+
+<h3 class="subheading">📤 Redirecting Output in Linux</h3>
+
+<ul class="custom-bullets">
+  <li>By default, commands read input from the keyboard and display output to the terminal</li>
+  <li>Processes communicate through <em>file descriptors</em> (channels)</li>
+</ul>
+
+<h4>🛠 Channels (File Descriptors)</h4>
+
+| Descriptor | Name             | Purpose                                 |
+|------------|------------------|-----------------------------------------|
+| 0          | Standard Input   | Reads user input (usually from keyboard) |
+| 1          | Standard Output  | Sends output to terminal                 |
+| 2          | Standard Error   | Sends errors to terminal                 |
+
+These channels can be redirected using symbols like:
+- <code>&gt;</code> → redirect stdout (overwrite)
+- <code>&gt;&gt;</code> → redirect stdout (append)
+- <code>2&gt;</code> → redirect stderr
+- <code>&gt;&amp;1</code> → redirect stderr to stdout
+
+<pre><code># ls > list.txt              # Redirect standard output to file
+# cat nofile 2> errors.log   # Redirect error output to errors.log
+# ls > out.txt 2>&1          # Redirect both stdout and stderr to out.txt</code></pre>
+
+
+
+
+
+<tr>
+  <td>Standard error</td>
+  <td>Terminal</td>
+  <td>Write Only (for error messages)</td>
+</tr>
+</table>
+
+---
+
+<h3 class="subheading">📊 File Descriptor Channel Summary</h3>
+
+<table class="comparison-table">
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Channel Name</th>
+      <th>Description</th>
+      <th>Default Connection</th>
+      <th>Usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>Stdin</td>
+      <td>Standard input</td>
+      <td>Keyboard</td>
+      <td>Read only</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Stdout</td>
+      <td>Standard output</td>
+      <td>Terminal</td>
+      <td>Write only</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Stderr</td>
+      <td>Standard error</td>
+      <td>Terminal</td>
+      <td>Write only</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+<h3 class="subheading">🔁 Additional File Descriptors</h3>
+
+<table class="comparison-table">
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Channel Name</th>
+      <th>Description</th>
+      <th>Default Connection</th>
+      <th>Usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>3+</td>
+      <td>Filename</td>
+      <td>Other file descriptors (custom or redirected files)</td>
+      <td>None</td>
+      <td>Read &amp; write</td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<h3 class="subheading">📤 Redirecting Output to a File</h3>
+
+<ul class="custom-bullets">
+  <li>I/O redirection lets a command read/write to files instead of the terminal</li>
+  <li>Useful for logging, saving, chaining outputs, or bypassing screens</li>
+</ul>
+
+<h4>🧪 Examples:</h4>
+
+<pre><code># date > date_output.txt                # Overwrite with current date
+# cal >> date_output.txt                # Append calendar output
+
+# find /etc/ -name passwd               # Search for 'passwd' file
+# find /etc/ -name passwd > Output      # Save results to 'Output' file
+# find /etc/ -name passwd 2>Errors.txt  # Redirect errors only
+# find /etc/ -name passwd > /tmp/output.txt 2> /dev/null
+# su – imran                            # Switch to normal user</code></pre>
+
+<p><strong>Note:</strong> <code>/dev/null</code> is a special file that discards all data written to it—often used to silence errors.</p>
+
+
+
+
+
+
+<h3 class="subheading">📤 Redirecting Standard Output & Error Streams</h3>
+
+<pre><code>$ cat /tmp/output.txt                         # View redirected output
+$ find /etc/ -name passwd 2> /dev/null        # Suppress stderr (errors only)
+$ find /etc/ -name passwd > output.txt        # Save stdout only
+$ find /etc/ -name passwd 2> /dev/null > output.txt   # Combine suppression and redirection
+$ find /etc/ -name passwd &> Both.txt         # Redirect both stdout and stderr into one file</code></pre>
+
+---
+
+<h3 class="subheading">🔗 Building Pipelines</h3>
+
+<ul class="custom-bullets">
+  <li><code>|</code> — Pipe standard output of one command into standard input of another</li>
+  <li>Pipelines use FD 1 (stdout) → FD 0 (stdin)</li>
+  <li>Redirection sends output to/from files; pipelines connect commands</li>
+</ul>
+
+<pre><code>$ ps aux | grep apache                        # Find apache processes
+$ cat /var/log/messages | less               # Page through log file</code></pre>
+
+---
+
+<h3 class="subheading">📝 Editing Files with VIM</h3>
+
+<ul class="custom-bullets">
+  <li><strong>vim</strong>: Terminal-based advanced editor</li>
+  <li><strong>gvim</strong>: GUI version of VIM</li>
+  <li>Great for all types of plain-text editing, especially code</li>
+</ul>
+
+---
+
+<h3 class="subheading">🧭 VIM Modes of Operation</h3>
+
+<ul class="custom-bullets">
+  <li>Insert Mode — Write and edit text</li>
+  <li>Command Mode — Navigate and execute commands</li>
+  <li>Extended Mode (Ex) — Use <code>:</code> prefixed commands</li>
+  <li>Visual Mode — Select text blocks</li>
+</ul>
+
+---
+
+<h4>🚀 Example:</h4>
+<pre><code># vimtutor                    # Learn vim with tutorial
+# vim Parwez.txt              # Open or create a file for editing</code></pre>
+
+
+
+
+
+<h3 class="subheading">🔀 VIM Cursor Movement Keys</h3>
+
+<pre><code>H : Move cursor to left
+L : Move cursor to right
+J : Move cursor down (to the line below)
+K : Move cursor up (to the line above)</code></pre>
+
+These motion keys are used in Command Mode. Think:
+- **H** = ← left
+- **L** = → right
+- **J** = ↓ down
+- **K** = ↑ up
+
+---
+
+<h2 id="_Toc185703277" class="section-heading">👥 6. Managing Local Users and Groups</h2>
+
+<h3 class="subheading">📌 User & Group Concepts</h3>
+
+<ul class="custom-bullets">
+  <li><strong>User:</strong> An individual account used to access a Linux system</li>
+  <li><strong>System Users:</strong> Used for running services (like <code>apache</code>, <code>mysql</code>)</li>
+  <li><strong>Normal Users:</strong> Created for human interaction, login, and local operations</li>
+  <li><strong>Groups:</strong> Collections of users with shared permissions or roles</li>
+</ul>
+
+---
+
+<h3 class="subheading">🔧 Key User Management Commands</h3>
+
+<ul class="custom-bullets">
+  <li><code>useradd</code>: Create new user</li>
+  <li><code>usermod</code>: Modify existing user</li>
+  <li><code>userdel</code>: Remove a user</li>
+</ul>
+
+<h3 class="subheading">👥 Group Management Commands</h3>
+
+<ul class="custom-bullets">
+  <li><code>groupadd</code>: Create new group</li>
+  <li><code>groupmod</code>: Modify group details</li>
+  <li><code>groupdel</code>: Delete a group</li>
+</ul>
+
+<h3 class="subheading">🔐 Password & Expiry Management</h3>
+
+<ul class="custom-bullets">
+  <li><code>passwd</code>: Set or change user password</li>
+  <li><code>chage</code>: Configure password expiration policy</li>
+</ul>
+
+<h3 class="subheading">🛡️ Superuser Access</h3>
+
+<ul class="custom-bullets">
+  <li><code>sudo</code>: Run commands with superuser privileges</li>
+  <li><code>sudoers</code>: File that controls sudo permissions</li>
+  <li><code>wheel</code> group: Users in this group can use <code>sudo</code></li>
+</ul>
+
+
+
+
+
+<h3 class="subheading">👥 Types of Users in Linux</h3>
+
+<table class="comparison-table">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Super User</th>
+      <th>System User</th>
+      <th>Regular User</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Purpose</strong></td>
+      <td>Administration of the system</td>
+      <td>Used by background services or daemons</td>
+      <td>For general day-to-day user activities</td>
+    </tr>
+    <tr>
+      <td><strong>Access</strong></td>
+      <td>Full system control</td>
+      <td>Not meant for direct login</td>
+      <td>Limited access per permissions</td>
+    </tr>
+    <tr>
+      <td><strong>UID Range</strong></td>
+      <td>UID = 0</td>
+      <td>UID 1–999</td>
+      <td>UID 1000 and above</td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<h3 class="subheading">🔢 UID Range Breakdown</h3>
+
+<ul class="custom-bullets">
+  <li><strong>UID 0</strong>: Reserved exclusively for the root user</li>
+  <li><strong>UID 1–200</strong>: Static allocation to essential system services (by Red Hat or other distributions)</li>
+  <li><strong>UID 201–999</strong>: Dynamic allocation for system software (like nginx, postfix)</li>
+  <li><strong>UID 1000+</strong>: Regular users created by system administrators or via login managers</li>
+</ul>
+
+---
+
+<h3 class="subheading">📂 User Database Files (Coming Up Next)</h3>
+
+<ul class="custom-bullets">
+  <li><code>/etc/passwd</code> – Stores basic user account information</li>
+  <li><code>/etc/shadow</code> – Stores encrypted passwords and aging policies</li>
+  <li><code>/etc/group</code> – Contains group definitions and memberships</li>
+</ul>
+
+
+
+
+
+
+<h3 class="subheading">📂 Key User Information Files</h3>
+
+<ul class="custom-bullets">
+  <li><code>/etc/passwd</code> → Stores user details (login name, UID, GID, shell)</li>
+  <li><code>/etc/shadow</code> → Stores user password data (encrypted), aging policies</li>
+</ul>
+
+<pre><code># grep Imran /etc/passwd</code></pre>
+
+---
+
+<h3 class="subheading">🔑 Fields in <code>/etc/passwd</code></h3>
+
+Each user entry contains **7 colon-separated fields**:
+1. **Username**: e.g., `imran`
+2. **Password placeholder**: usually `x` (actual password in `/etc/shadow`)
+3. **UID**: User ID
+4. **GID**: Primary group ID
+5. **Comment**: Typically user's full name or description
+6. **Home Directory**: Default login directory
+7. **Shell**: Default shell (e.g., `/bin/bash`)
+
+---
+
+<h3 class="subheading">📨 What Gets Created by Default</h3>
+
+<ul class="custom-bullets">
+  <li>User’s Home Directory at <code>/home/username</code></li>
+  <li>Primary group with the same name (User Private Group)</li>
+  <li>Mail spool file (if mail service is available): <code>/var/spool/mail/username</code></li>
+  <li>Assigned UID and GID</li>
+</ul>
+
+---
+
+<h3 class="subheading">🔐 /etc/shadow — Password Details</h3>
+
+This file holds sensitive, encrypted password data. Fields include:
+
+1. Username  
+2. Encrypted Password (stored using SHA-512 by default)  
+3. Days since Jan 1, 1970 password was last changed  
+4. Minimum number of days before password can be changed  
+5. Maximum number of days password is valid  
+6. Warning days before password expiration  
+7. Inactive days after expiration before account is disabled  
+8. Account expiration date (days since 1970)  
+9. Reserved (future use)
+
+---
+
+<h3 class="subheading">👤 Creating a User</h3>
+
+<ul class="custom-bullets">
+  <li>Default shell, UID, GID, home folder are assigned</li>
+  <li>Primary group is created (same as username)</li>
+</ul>
+
+<pre><code># useradd imran
+# passwd imran</code></pre>
+
+
+
+<h3 class="subheading">📁 Skeleton Directory on User Creation</h3>
+
+<ul class="custom-bullets">
+  <li><code>/etc/skel</code> contains default files like <code>.bashrc</code>, <code>.bash_profile</code>, and <code>.bash_logout</code></li>
+  <li>These files are copied into the user’s home directory when created with <code>useradd</code></li>
+  <li><code>/etc/passwd</code> is updated to register the new user</li>
+</ul>
+
+---
+
+<h3 class="subheading">👤 Adding a User (Syntax)</h3>
+
+<pre><code># useradd &lt;username&gt;
+# useradd &lt;options&gt; &lt;username&gt;
+
+# useradd Tabrez ; echo "redhat" | passwd --stdin Tabrez
+# grep Tabrez /etc/passwd        # Verify creation</code></pre>
+
+---
+
+<h3 class="subheading">🛠 Modifying User Properties</h3>
+
+<pre><code># usermod &lt;options&gt; &lt;username&gt;</code></pre>
+
+| Option | Description |
+|--------|-------------|
+| `-c`   | Add/modify comment (description) |
+| `-g`   | Change primary group |
+| `-G`   | Set supplementary groups (replaces old list unless used with `-a`) |
+| `-a`   | Append to supplementary groups (must be used with `-G`) |
+| `-a -G` | Safely add user to more than one group |
+| `-d`   | Set a new home directory path |
+| `-m`   | Move the existing home directory to the new one (used with `-d`) |
+| `-s`   | Change default shell |
+| `-l`   | Change login name |
+| `-L`   | Lock the account |
+
+---
+
+
+
+<h3 class="subheading">🔁 More <code>usermod</code> Options</h3>
+
+| Option | Purpose |
+|--------|---------|
+| <code>-U</code> | Unlock a previously locked user account |
+| <code>-u</code> | Change the UID (user ID) |
+
+---
+
+<h3 class="subheading">🧪 usermod Practical Examples</h3>
+
+<h4>✏️ Change Login Name</h4>
+<pre><code># usermod -l linux imran
+# grep imran /etc/passwd
+linux:x:1000:1000:imran:/home/imran:/bin/bash</code></pre>
+<em>Note: Use <code>id</code> to verify currently logged-in user info.</em>
+
+<h4>🔁 Change UID</h4>
+<pre><code># usermod -u 1996 linux
+# grep linux /etc/passwd
+linux:x:1996:1000:imran:/home/imran:/bin/bash</code></pre>
+
+<h4>👥 Set Primary Group</h4>
+<pre><code># usermod -g 5000 Linux3
+# grep Linux3 /etc/passwd
+Linux3:x:1003:5000::/home/Linux3:/bin/bash</code></pre>
+
+<h4>➕ Set Secondary Group (overwrite)</h4>
+<pre><code># usermod -G HR Linux1
+# grep HR /etc/group
+HR:x:3000:Linux1</code></pre>
+<em>Note: This REPLACES existing group list unless <code>-a</code> is used.</em>
+
+<h4>➕ Add to Multiple Groups (append)</h4>
+<pre><code># usermod -aG HR linux</code></pre>
+
+<h4>🗣️ Add Comment</h4>
+<pre><code># usermod -c "rhel" linux
+# grep linux /etc/passwd
+linux:x:1996:1000:rhel:/home/imran:/bin/bash</code></pre>
+
+<h4>📦 Change and Move Home Directory</h4>
+<pre><code># usermod -m -d "/home/newlinux" linux</code></pre>
+<ul>
+  <li><code>-d</code>: Set the new path</li>
+  <li><code>-m</code>: Move existing files to the new path</li>
+</ul>
+
+
+
+
+<h3 class="subheading">🏠 Move Home Directory and Shell Access</h3>
+
+<pre><code># mkdir /userdata
+# usermod -m -d /userdata/linux linux
+# grep linux /etc/passwd
+linux:x:1996:1000:rhel:/userdata/linux:/bin/bash</code></pre>
+
+---
+
+<h3 class="subheading">🚫 Change Login Shell to Prevent Login</h3>
+
+<pre><code># usermod -s /sbin/nologin Linux1
+# su - linux
+This account is currently not available.</code></pre>
+
+<p><strong>Note:</strong> Setting shell to <code>/sbin/nologin</code> disables login access without deleting the account.</p>
+
+---
+
+<h3 class="subheading">🔒 Locking and 🔓 Unlocking a User Account</h3>
+
+<h4>🔒 Lock Account</h4>
+<pre><code># usermod -L linux
+# passwd -S linux
+linux LK 2022-10-09 0 99999 7 -1</code></pre>
+
+<h4>🔓 Unlock Account</h4>
+<pre><code># usermod -U Linux1
+# passwd -S Linux1
+Linux1 PS 2022-10-09 0 99999 7 -1</code></pre>
+
+---
+
+<h3 class="subheading">🏡 Changing Home Directory Without Data Migration</h3>
+
+<pre><code># usermod -d /userdata/linux linux</code></pre>
+<p>This updates the login path in <code>/etc/passwd</code> but does <em>not</em> move existing content. It may block login if the new directory lacks proper files and permissions.</p>
+
+---
+
+<h3 class="subheading">🔐 Managing User Passwords with <code>passwd</code></h3>
+
+<ul class="custom-bullets">
+  <li><code>passwd &lt;user&gt;</code> – Set new password</li>
+  <li><code>passwd -S &lt;user&gt;</code> – Check password status</li>
+  <li><code>passwd -d &lt;user&gt;</code> – Delete password (disables login)</li>
+  <li><code>passwd -l &lt;user&gt;</code> – Lock password</li>
+  <li><code>passwd -u &lt;user&gt;</code> – Unlock password</li>
+</ul>
+
+<pre><code># passwd Linux1
+Changing password for user Linux1.
+New password: ********</code></pre>
+
+
+
+
+
+
+
+<h3 class="subheading">🔐 Password Status and Management Recap</h3>
+
+<ul class="custom-bullets">
+  <li><code>passwd -S &lt;user&gt;</code> – Check password status</li>
+  <li><code>passwd -d &lt;user&gt;</code> – Remove user password (disables password-based login)</li>
+  <li><code>passwd -l &lt;user&gt;</code> – Lock user’s password</li>
+  <li><code>passwd -u &lt;user&gt;</code> – Unlock user’s password</li>
+</ul>
+
+---
+
+<h3 class="subheading">🗑️ Deleting a User Account</h3>
+
+<pre><code># userdel Linux3                  # Delete user only
+# userdel -r Linux2               # Delete user and their home directory</code></pre>
+
+<p>Use <code>-r</code> carefully — it permanently removes user files in their home directory.</p>
+
+---
+
+<h3 class="subheading">👥 Introduction to Linux Groups</h3>
+
+<ul class="custom-bullets">
+  <li>A **group** is a collection of users sharing access privileges</li>
+  <li>Each group is identified by a **GID (Group ID)**</li>
+  <li>In RHEL 8, GIDs <code>1–999</code> are reserved for system-created groups</li>
+  <li>Groups are defined in <code>/etc/group</code></li>
+</ul>
+
+---
+
+<h4>🔸 Two Types of Groups</h4>
+
+| Group Type      | Description                                       |
+|-----------------|---------------------------------------------------|
+| Primary Group   | Assigned at account creation, one per user        |
+| Secondary Group | Additional groups for extended access privileges  |
+
+<pre><code># id username           # View group membership
+# groups username       # List all groups user belongs to
+</code></pre>
+
+
+
+
+
+
+<h3 class="subheading">👥 Primary vs. Secondary Groups</h3>
+
+<ul class="custom-bullets">
+  <li>🧩 **Primary Group**:
+    <ul>
+      <li>Created automatically with new users (User Private Group)</li>
+      <li>Listed as GID (4th field) in <code>/etc/passwd</code></li>
+      <li>Only one primary group per user</li>
+      <li>Used by default for file permissions and quotas</li>
+    </ul>
+  </li>
+
+  <li>➕ **Secondary Group**:
+    <ul>
+      <li>Added manually via <code>usermod -aG</code></li>
+      <li>Users can belong to many secondary groups</li>
+      <li>Provides access to shared resources beyond the primary group</li>
+      <li>Defined in the last field of <code>/etc/group</code></li>
+    </ul>
+  </li>
+</ul>
+
+---
+
+<h3 class="subheading">📄 /etc/group – Group Properties</h3>
+
+<ul class="custom-bullets">
+  <li>Each group is a line in the <code>/etc/group</code> file with four fields separated by <code>:</code>:
+    <ol>
+      <li>Group name</li>
+      <li>Group password (usually <code>x</code>, actual data in <code>/etc/gshadow</code>)</li>
+      <li>GID (Group ID)</li>
+      <li>Comma-separated list of secondary members</li>
+    </ol>
+  </li>
+</ul>
+
+Example line in <code>/etc/group</code>:
+```bash
+developers:x:3000:imran,linux1
+
+
+<h3 class="subheading">📌 Creating Groups in Linux</h3>
+
+<ul class="custom-bullets">
+  <li>Basic group creation:
+    <pre><code># groupadd SALE</code></pre>
+  </li>
+  <li>With custom GID:
+    <pre><code># groupadd -g 4000 HR</code></pre>
+  </li>
+  <li>For system group (GID < 1000):
+    <pre><code># groupadd -r IT</code></pre>
+  </li>
+</ul>
+
+---
+
+<h3 class="subheading">🛠 Modifying Groups</h3>
+
+<ul class="custom-bullets">
+  <li><strong>Change Group ID:</strong>
+    <pre><code># groupmod -g 5000 HR</code></pre>
+  </li>
+  <li><strong>Rename a Group:</strong>
+    <pre><code># groupmod -n Account HR</code></pre>
+  </li>
+</ul>
+
+---
+
+<h3 class="subheading">👥 Managing Group Membership with <code>gpasswd</code></h3>
+
+<ul class="custom-bullets">
+  <li><code>-M</code>: Add multiple users (comma-separated)
+    <pre><code># gpasswd -M Linux1,Linux2,Linux3 HR</code></pre>
+    <em>→ Appears in last field of <code>/etc/group</code></em>
+  </li>
+  <li><code>-A</code>: Set group administrator
+    <pre><code># gpasswd -A Admin HR</code></pre>
+    <em>→ View with <code>grep HR /etc/gshadow</code></em>
+  </li>
+  <li><code>-a</code>: Add single user to group
+    <pre><code># gpasswd -a Linux4 IT</code></pre>
+  </li>
+</ul>
+
+<p>Group membership is a cornerstone of fine-grained Linux permissions. Your walkthrough is textbook-worthy, Imran. 👏</p>
+
+Shall we expand next into deleting groups, default group behavior, or dive into real-world examples with directory permissions and <code>chgrp</code>/<code>chmod</code>?
+
+
+
+
+<h3 class="subheading">🚫 Removing User from Group</h3>
+
+<pre><code># gpasswd -d &lt;username&gt; &lt;groupname&gt;
+# gpasswd -d Linux3 HR</code></pre>
+<p><em>Result:</em> <code>Removing user Linux3 from group HR</code></p>
+
+---
+
+<h3 class="subheading">🔐 Setting Group Password (Legacy Feature)</h3>
+
+<pre><code># gpasswd HR</code></pre>
+<p>This prompts you to enter a password for the group <code>HR</code>. Group passwords are rarely used today but supported for backward compatibility.</p>
+
+---
+
+<h3 class="subheading">🗑️ Deleting a Group</h3>
+
+<pre><code># groupdel HR</code></pre>
+<p><strong>Note:</strong> You cannot delete a group if it's still listed as the primary group of any user.</p>
+
+---
+
+<h2 class="section-heading">⏳ Password Aging with <code>chage</code></h2>
+
+<pre><code>Syntax: chage [options] &lt;username&gt;</code></pre>
+
+| Option | Purpose |
+|--------|---------|
+| <code>-l</code> | List current password aging info |
+| <code>-d</code> | Set last password change date |
+| <code>-E</code> | Set account expiration date |
+| <code>-m</code> | Minimum days between password changes |
+| <code>-M</code> | Maximum days password is valid |
+| <code>-I</code> | Inactive days after password expiry |
+| <code>-W</code> | Warning days before expiry |
+| <code>-M -1</code> | Password never expires |
+| <code>-E -1</code> | Disable account expiry date |
+
+<h4>🔍 Example: View Password Aging Info</h4>
+<pre><code># chage -l imran</code></pre>
+
+
+
+
+
+
+
+
+<h3 class="subheading">📆 Advanced Password Aging with <code>chage</code></h3>
+
+<h4>✏️ 2. Modify Last Password Change Date</h4>
+<pre><code># chage -d 2022-10-10 imran
+# chage -l imran</code></pre>
+<p>This updates the "Last password change" field to a specific date. You can also use <code>--lastday</code> as a long-form option.</p>
+
+---
+
+<h4>🧯 3. Set Account Expiry Date</h4>
+<pre><code># chage -E 2022-10-30 imran
+# chage -l imran</code></pre>
+<p>This sets the account to expire and be disabled on October 30, 2022. Use <code>-E -1</code> to remove expiry.</p>
+
+---
+
+<h4>📉 4. Set Minimum Days Between Password Changes</h4>
+<pre><code># chage -m 10 imran
+# chage -l imran</code></pre>
+<p>This prevents the user from changing the password for at least 10 days after the last change.</p>
+
+---
+
+<h4>📈 5. Set Maximum Days Between Password Changes</h4>
+<pre><code># chage -M 10 Parwez
+# chage -l Parwez</code></pre>
+<p>After 10 days, the user must change the password. Use <code>-M -1</code> to disable password expiration.</p>
+
+---
+
+<h4>⏳ 6. Set Inactivity Period After Expiration</h4>
+<pre><code># chage -I 5 imran
+# chage -l imran</code></pre>
+<p>The account becomes inactive and disabled 5 days after the password has expired.</p>
+
+---
+
+<h4>⚠️ 7. Set Warning Period Before Password Expiry</h4>
+<pre><code># chage -W 7 imran
+# chage --warndays 7 imran</code></pre>
+<p>This prompts the user with a warning 7 days before the password expires.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
